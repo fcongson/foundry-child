@@ -1,0 +1,16 @@
+web:
+    image: wordpress
+    links:
+     - mysql
+    environment:
+     - WORDPRESS_DB_PASSWORD=password
+    ports:
+     - "8080:80"
+    volumes:
+     - ./wp-content/themes/foundry-child/:/var/www/html/wp-content/themes/foundry-child
+     - ./wp-content/themes/foundry/:/var/www/html/wp-content/themes/foundry
+mysql:
+    image: mysql
+    environment:
+     - MYSQL_ROOT_PASSWORD=password
+     - MYSQL_DATABASE=wordpress
