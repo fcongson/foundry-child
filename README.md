@@ -25,7 +25,7 @@ This removes the containers, default network, and the WordPress database
 
 ## Notes
 
-Updating style.css may need "Empty Cache and Hard Reload"
+Updating `foundry-child/style.css` may need "Empty Cache and Hard Reload"
 
 ## Reference
 

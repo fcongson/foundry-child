@@ -6,6 +6,13 @@
  Version:      1.0.0
 */
 
+@import url('../foundry/style.css');
+
+/* background image styles */
+.overlay::before {
+  opacity: 0;
+}
+
 /* post snippet styles */
 div.post-snippet img {
   margin-bottom: 0;
