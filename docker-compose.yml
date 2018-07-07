@@ -1,16 +1,30 @@
-web:
-    image: wordpress
-    links:
-     - mysql
-    environment:
-     - WORDPRESS_DB_PASSWORD=password
-    ports:
-     - "8080:80"
-    volumes:
-     - ./wp-content/themes/foundry-child/:/var/www/html/wp-content/themes/foundry-child
-     - ./wp-content/themes/foundry/:/var/www/html/wp-content/themes/foundry
-mysql:
-    image: mysql
-    environment:
-     - MYSQL_ROOT_PASSWORD=password
-     - MYSQL_DATABASE=wordpress
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     ports:
+       - "8000:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+     volumes:
+       - ./wp-content/themes/foundry-child/:/var/www/html/wp-content/themes/foundry-child
+       - ./wp-content/themes/foundry/:/var/www/html/wp-content/themes/foundry
+volumes:
+    db_data:
