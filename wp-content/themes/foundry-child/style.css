@@ -5,3 +5,17 @@
  Template:     foundry
  Version:      1.0.0
 */
+
+/* post snippet styles */
+div.post-snippet img {
+  margin-bottom: 0;
+}
+div.post-snippet div.inner {
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+}
+div.post-snippet h5.uppercase {
+  letter-spacing: .5px;
+  font-weight: 500;
+  font-size: 14px;
+}

@@ -23,8 +23,14 @@ docker-compose down --volumes
 ```
 This removes the containers, default network, and the WordPress database
 
+## Notes
+
+Updating style.css may need "Empty Cache and Hard Reload"
+
 ## Reference
 
 Foundry Theme - https://www.tommusrhodus.com/portfolio/foundry-wordpress-theme/
 
 Quickstart Compose and Wordpress - https://docs.docker.com/compose/wordpress/
+
+How To Create And Customize A WordPress Child Theme - https://www.smashingmagazine.com/2016/01/create-customize-wordpress-child-theme/
