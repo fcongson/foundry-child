@@ -1,7 +1,6 @@
 <?php $format = get_post_format(); ?>
 
-<!-- <div class="col-sm-6 post-snippet masonry-item"> -->
-<div class="col-sm-6 post-snippet">
+<div class="col-sm-6 post-snippet masonry-item">
 
     <?php get_template_part('inc/content-format', $format); ?>
     
